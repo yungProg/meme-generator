@@ -1,5 +1,5 @@
 * {
-  font-size: 16px;
+  font-size: 100%;
   box-sizing: border-box;
 }
 
@@ -35,4 +35,46 @@ body {
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 0.91rem;
+}
+
+.section--form {
+  display: flex;
+  flex-direction: column;
+  margin: 3.125rem;
+  gap: 25px;
+}
+
+.section--inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6%;
+}
+
+input[type="text"] {
+  width: 47%;
+  height: 2.19rem;
+  padding: 0.5rem;
+  border-radius: 0.31rem;
+  border: 1px solid #D5D4D8;
+  font-size: 0.75rem;
+  line-height: 0.88rem;
+  font-weight: 400;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #D5D4D8;
+}
+
+button {
+  height: 2.5rem;
+  border-radius: 0.31rem;
+  background: linear-gradient(90.41deg, #711F8D 1.14%, #A818DA 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.17rem;
+  letter-spacing: -10%;
+  text-align: center;
 }
