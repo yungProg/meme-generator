@@ -80,3 +80,9 @@ button {
   border: none;
   cursor: pointer;
 }
+
+.meme {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+}
