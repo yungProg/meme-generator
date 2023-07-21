@@ -8,7 +8,7 @@ const Meme = () => {
     const memeUrls = memeData.data.memes.map(url => url.url);
     let randomIndex = Math.floor(Math.random() * memeUrls.length)
 
-    const [meme, setMeme] = React.useState(memeUrls[0])
+    const [meme, setMeme] = React.useState(memeUrls[1])
 
     function handleMeme(){
         setMeme(memeUrls[randomIndex])
@@ -22,7 +22,7 @@ const Meme = () => {
                     <input type="text" placeholder="Second line" />
                 </div>
                 <button value="submit" onClick={handleMeme}>Get a new meme image <FontAwesomeIcon icon={faImage} /></button> 
-                <div className="div--meme"><img className="meme" src={meme} alt="meme" /></div>
+                <img className="meme" src={meme} alt="meme" />
             </div>
         </section>
     )
