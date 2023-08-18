@@ -57,7 +57,7 @@ const Meme = () => {
                         onChange={getMemeText}
                     />
                 </div>
-                <button value="submit" onClick={getMemeImage}>Get a new meme image <FontAwesomeIcon icon={faImage} /></button> 
+                <button value="submit" onClick={getMemeImage}>Get random meme image <FontAwesomeIcon icon={faImage} /></button> 
                 <div className="relative">
                 <img className="meme" src={allMemeImages.randomImage} alt="meme" />
                 <p className="text top">{meme.toptext}</p>
