@@ -4,34 +4,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faImage } from '@fortawesome/free-solid-svg-icons'
 
 const Meme = () => {
-
-    /*const memeUrls = memeData.data.memes.map(url => url.url);
-    let randomIndex = Math.floor(Math.random() * memeUrls.length)*/
     const memeArr = memesData.data.memes
 
-    const [meme, setMeme] = React.useState({
+    const [memeText, setMemeText] = React.useState({
         toptext: "",
         bottomText: "",
     })
 
-    const [allMemeImages, setAllMemeImages] = React.useState({
+    const [memeImage, setMemeImage] = React.useState({
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
 
-    function getMemeText(event){
+    function handleMemeText(event){
         const {name, value} = event.target
-        setMeme(
-            prevState =>({
-                ...prevState,
+        setMemeText(
+            prevText =>({
+                ...prevText,
                 [name]: value,
             })
         )
     }
     function getMemeImage(){
-        setAllMemeImages(
-            prevState => (
+        setMemeImage(
+            prevImage => (
                 {
-                    ...prevState,
+                    ...prevImage,
                     randomImage: memeArr[Math.floor(Math.random() * memeArr.length)].url
                 }
             )
@@ -46,22 +43,22 @@ const Meme = () => {
                         type="text" 
                         placeholder="First line" 
                         name="toptext"
-                        value={meme.toptext}
-                        onChange={getMemeText}
+                        value={memeText.toptext}
+                        onChange={handleMemeText}
                     />
                     <input 
                         type="text" 
                         placeholder="Second line" 
                         name="bottomText"
-                        value={meme.bottomText}
-                        onChange={getMemeText}
+                        value={memeText.bottomText}
+                        onChange={handleMemeText}
                     />
                 </div>
                 <button value="submit" onClick={getMemeImage}>Get random meme image <FontAwesomeIcon icon={faImage} /></button> 
                 <div className="relative">
-                <img className="meme" src={allMemeImages.randomImage} alt="meme" />
-                <p className="text top">{meme.toptext}</p>
-                <p className="text bottom">{meme.bottomText}</p>
+                <img className="meme" src={memeImage.randomImage} alt="meme" />
+                <p className="text top">{memeText.toptext}</p>
+                <p className="text bottom">{memeText.bottomText}</p>
                 </div>
             </div>
         </section>

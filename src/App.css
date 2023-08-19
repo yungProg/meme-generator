@@ -92,15 +92,16 @@ button {
 }
 
 .text {
+  font-family: Impact, sans-serif;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   font-size: 48px;
-  color: #CCCCCC;
+  color: #efefef;
   text-transform: uppercase;
   letter-spacing: 1px;
-    text-shadow:
+  text-shadow:
         2px 2px 0 #000,
         -2px -2px 0 #000,
         2px -2px 0 #000,
