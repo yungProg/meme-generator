@@ -11,13 +11,15 @@ the image property which is url for the image is stored to `state` and rendered.
 User has two impUt fieldS:
     ** One which puts text to the top of the image and
     ** one which puts text to the bottom
+User can change font-size, font-family and color
+
 
 ## Limitations of this app
 * Some image links are broken so you may see no image
 * Texts overlayed on the image is not permanent hence upon downloading or saving the 
 you will see no text on it
 * There is no download button to download meme to you local device
-* User can't change font-size, font-family and color
+* Text can't be dragged
 
 This project is part of scrimba React course by Bob Ziroll. I haven't completed it but I 
 thought it would be beneficial for me to try my hands on it.

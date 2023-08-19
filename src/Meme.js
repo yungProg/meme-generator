@@ -9,6 +9,11 @@ const Meme = () => {
     const [memeText, setMemeText] = React.useState({
         toptext: "",
         bottomText: "",
+        fontFamily: "",
+        fontColor: "#efefef",
+        fontSize: 16,
+        minFontSize: 8,
+        maxFontSize: 72,
     })
 
     const [memeImage, setMemeImage] = React.useState({
@@ -35,6 +40,14 @@ const Meme = () => {
         )
     }
 
+    const textFont = {
+        fontFamily: memeText.fontFamily,
+        fontSize: Number(memeText.fontSize) < memeText.minFontSize ? Number(memeText.minFontSize) : 
+        Number(memeText.fontSize) > Number(memeText.maxFontSize) ? Number(memeText.maxFontSize) : 
+        Number(memeText.fontSize),
+        color: memeText.fontColor
+    }
+
     return (
         <section>
             <div className="section--form">
@@ -54,11 +67,46 @@ const Meme = () => {
                         onChange={handleMemeText}
                     />
                 </div>
-                <button value="submit" onClick={getMemeImage}>Get random meme image <FontAwesomeIcon icon={faImage} /></button> 
+                <button value="submit" onClick={getMemeImage}>Get random meme image <FontAwesomeIcon icon={faImage} /></button>
+                <div className="font">
+                    <div className="fam">
+                <span>Font family: </span>
+                <select
+                    name="fontFamily"
+                    value={memeText.fontFamily}
+                    onChange={handleMemeText}
+                >
+                    <option value="Impact">Impact</option>
+                    <option value="Karla">Karla</option>
+                    <option value="sans-serif">sans-serif</option>
+                    <option value="serif">serif</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="monospace">monospace</option>
+                </select> 
+                <input 
+                    type="color" 
+                    name="fontColor"
+                    value={memeText.fontColor}
+                    onChange={handleMemeText}
+                />
+                </div>
+                <div className="div--font">
+                <label htmlFor="font--size">Font size:</label>
+                <input 
+                        id="font--size"
+                        type="number" 
+                        name="fontSize"
+                        value={memeText.fontSize}
+                        onChange={handleMemeText}
+                        min={memeText.minFontSize}
+                        max={memeText.maxFontSize}
+                    />
+                </div>
+                </div>
                 <div className="relative">
                 <img className="meme" src={memeImage.randomImage} alt="meme" />
-                <p className="text top">{memeText.toptext}</p>
-                <p className="text bottom">{memeText.bottomText}</p>
+                <p draggable={true} className="text top" style={textFont}>{memeText.toptext}</p>
+                <p className="text bottom" style={textFont}>{memeText.bottomText}</p>
                 </div>
             </div>
         </section>
