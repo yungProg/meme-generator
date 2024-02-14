@@ -8,7 +8,7 @@ to see.
 When user clicks `Get random image`, `setState` passes a random object to `state` and 
 the image property which is url for the image is stored to `state` and rendered.
 
-User has two impUt fieldS:
+User has two input fields:
     ** One which puts text to the top of the image and
     ** one which puts text to the bottom
 User can change font-size, font-family and color
